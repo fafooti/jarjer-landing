@@ -1,0 +1,19 @@
+.input-with-gradient-border {
+    position: relative;
+    background-color: white;
+    z-index: 1;
+}
+
+.input-with-gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(to right, rgba(0, 27, 121, 1), rgba(22, 64, 214, 1));
+    border-radius: 0.375rem;
+    z-index: -1;
+    pointer-events: none;
+
+}
