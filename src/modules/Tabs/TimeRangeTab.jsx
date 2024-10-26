@@ -1,23 +1,23 @@
 "use client"
 import React, { useState } from "react";
 import InvestmentGraph from "./InvestmentGraph";
+import Button from "@/components/Button";
 
 const TimeRangeTabs = () => {
   const [timeRange, setTimeRange] = useState("Daily");
 
   return (
-    <div>
-      <div className="flex justify-center mb-4">
+    <div className="flex justify-between gap-6 px-3 lg:flex-row flex-col">
+      <div className="flex  h-full rounded-46 py-4 px-10 bg-white justify-between mb-4">
         {["Daily", "Weekly", "Monthly"].map((range) => (
-          <button
+          <Button
             key={range}
-            className={`px-4 py-2 mx-2 ${
-              timeRange === range ? "bg-blue-500 text-white" : "bg-gray-200"
-            }`}
+            className={`px-4 py-2  ${ timeRange === range ?"bg-lightBlue text-white":"text-primaryBlue"}`}
+    
             onClick={() => setTimeRange(range)}
           >
             {range}
-          </button>
+          </Button>
         ))}
       </div>
       <InvestmentGraph timeRange={timeRange} />
